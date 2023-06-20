@@ -10,9 +10,9 @@ namespace WendingMachineForKSKExpert.Models
     {
         protected override void Seed(DataBaseContext db)
         {
-            db.Drinks.Add(new DrinksModel { drinkId = 1, drinkName = "Л. Толстой", price = 1, amount=2, locked=0});
-            db.Drinks.Add(new DrinksModel { drinkId = 2, drinkName = "И. Тургенев", price = 1, amount = 2 , locked = 0 });
-            db.Drinks.Add(new DrinksModel { drinkId = 3, drinkName = "А. Чехов", price = 1, amount = 2, locked = 1 });
+            db.Drinks.Add(new DrinksModel { drinkId = 1, drinkName = "Кола", price = 1, amount=2, locked=0});
+            db.Drinks.Add(new DrinksModel { drinkId = 2, drinkName = "Вода", price = 1, amount = 2 , locked = 0 });
+            db.Drinks.Add(new DrinksModel { drinkId = 3, drinkName = "Квас", price = 1, amount = 2, locked = 1 });
 
             base.Seed(db);
         }

@@ -14,7 +14,7 @@ namespace WendingMachineForKSKExpert
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new DataBaseInitializer());
+            Database.SetInitializer(new DataBaseInitializer()); //я люблю использовать codeFirst, при желании эту строку можно закомментить
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
