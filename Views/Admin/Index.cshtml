@@ -1,0 +1,31 @@
+﻿@model WendingMachineForKSKExpert.Models.DrinksModel
+
+@using (Html.BeginForm())
+{
+    <h1>Список напитков</h1>
+    foreach (var p in ViewBag.Drinks)
+    {
+        <table>
+            <tr>
+                <td>@p.drinkId</td>
+                <td>@p.drinkName</td>
+                <td>@p.price</td>
+                <td>@p.amount</td>
+                <td>@p.locked</td>
+                <td><input name="delete" class="button" type="submit" value=@p.drinkId /></td>
+            </tr>
+        </table>
+    }
+
+    <h1>Править напиток - введите id из таблицы выше. Создать напиток - оставьте id пустым.</h1>
+    @Html.EditorForModel()
+    <div class="editor-label">Image</div>
+    <div class="editor-field">
+        <div>
+            Upload new image:
+            <input type="file" name="Image" />
+        </div>
+    </div>
+    <input type="submit" value="Save" />
+
+}

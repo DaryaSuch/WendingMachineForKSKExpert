@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<body>
+    
+    @using (Html.BeginForm())
+    {
+        <h3 valign="top">Напитки</h3>
+        foreach (var p in ViewBag.Drinks)
+        {
+            bool drinkdis = (Convert.ToBoolean(@p.locked) && (@p.amount > 0));
+            <td align="center">
+                <button name="clickonbutton" type="submit" value="@p.drinkName" disabled="@drinkdis"><img class="center" src="@Url.Action("GetImage", "Home", new { p.drinkId })" style="width: 128px; height: 96px;vertical-align: bottom">@p.drinkName, @p.price, @p.amount </button>
+            </td>
+        }
+        <h3 valign="top">Заплатите чеканной монетой</h3>
+        <input name="clickbuttoncoin" id="One" class="btn btn-primary btn-lg" type="submit" value="1" />
+        <input name="clickbuttoncoin" id="Two" class="btn btn-primary btn-lg" type="submit" value="2" />
+        <input name="clickbuttoncoin" id="Five" class="btn btn-primary btn-lg" type="submit" value="5" />
+        <input name="clickbuttoncoin" id="Ten" class="btn btn-primary btn-lg" type="submit" value="10" />
+        <br />
+        <h2 colspan="2" align="center">У вас есть: <input name="SumMoney" value=@ViewBag.SumMoney> монет</h2>
+        <input name="buttonrestofmoney" class="button" type="submit" value="Получить сдачу" />
+        <h3>@ViewBag.Change</h3>
+    }
+</body>
